@@ -27,16 +27,24 @@ export default function Home() {
             src={DATA.profile.photo}
             alt="Profile"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_10%] border-4 border-white shadow-lg mb-6"          />
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+            <h1 className="text-lg md:text-6xl font-extrabold mb-2">
             Halo, Saya <span className="text-primary-600">{DATA.profile.name}</span>
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-8">
+            </h1>
+          <p className="text-1lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mt-5 mb-8">
             {DATA.profile.role}
           </p>
           <div className="flex gap-4">
-            <Button href="#projects" color="blue">Lihat Proyek</Button>
-            <Button href="#contact" color="blue" outline>Hubungi Saya</Button>
-          </div>
+          <Button
+            href="#projects"
+            color="blue"
+            className="relative group"
+          >
+            <span className="relative">
+              Lihat Proyek
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
+            </span>
+          </Button>            
+          <Button href="#contact" color="blue" outline className="rounded-full px-6 py-2 hover:bg-gray-600 hover:text-white dark:hover:bg-blue-600">Hubungi Saya</Button>  </div>
         </section>
         <section id="about" className="py-5 px-4 max-w-4xl mx-auto">
           <h2 className="scroll-mt-10 py-15 px-4 max-w-4xl mx-auto font-bold text-3xl text-center">Tentang Saya</h2>
@@ -54,14 +62,14 @@ export default function Home() {
               Keahlian & Kompetensi
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 top-0">
               {DATA.skills.map((category, index) => (
               <Card
                 key={index}
                 className="!p-4 h-full flex flex-col justify-start rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 bg-[var(--site-bg)]"
               >
 
-                <h3 className="text-lg font-bold text-primary-600 dark:text-primary-400 mb-4 uppercase tracking-wider">
+                <h3 className="top-0 text-lg font-bold text-primary-600 dark:text-primary-400 mb-4 uppercase tracking-wider">
                   {category.name}
                 </h3>
 
@@ -85,7 +93,7 @@ export default function Home() {
         </section>
         <section id="projects" className="py-5 px-4 max-w-6xl mx-auto mb-10">
           <h2 className="scroll-mt-10 py-15 text-3xl font-bold text-center mb-12">Proyek Pilihan</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2.5 gap-8">
             {DATA.projects.map((project, index) => (
               <Card
                 key={index}
@@ -96,7 +104,7 @@ export default function Home() {
                 <h5 className="pt-2 text-2xl font-bold tracking-tight">
                   {project.title}
                 </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">
+                <p className="font-normal text-gray-700 dark:text-gray-400 text-justify leading-relaxed mt-2">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
