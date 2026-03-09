@@ -2,7 +2,7 @@
 export const DATA = {
   profile: {
     name: "Muhammad Nursalim Imron",
-    photo: "/profile.jpg",
+    photo: "/profile-mon.jpg",
     role: "UI/UX Designer & Front-end Developer",
     about: "Saya adalah mahasiswa tahun terakhir yang memiliki pengalaman di bidang teknologi, khususnya UI/UX dan front-end. Saya juga terbiasa membuat dokumen teknis seperti BRD, test case, dan laporan kerja, FSD, membuat sequence dan topologi sistem serta membaca dokumentasi API menggunakan Postman dan Swagger. Saya juga sering menggunakan Figma dan Lucidchart untuk membuat desain dan alur sistem. Saya cepat belajar, mudah beradaptasi, dan selalu berusaha bekerja tepat waktu serta komunikatif dalam tim.",
   },

@@ -22,12 +22,15 @@ export default function Home() {
 
       <main>
         <section id="home" className="pt-20 pb-20 px-4 flex flex-col items-center text-center">
-          {/* FOTO PROFILE */}
-          <img
-            src={DATA.profile.photo}
-            alt="Profile"
-            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_10%] border-4 border-white shadow-lg mb-6"          />
-            <h1 className="text-lg md:text-6xl font-extrabold mb-2">
+          <div className="relative mb-6">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-spin-slow blur-sm"></div>
+            <img
+              src={DATA.profile.photo}
+              alt="Profile"
+              className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_10%] border-4 border-white dark:border-gray-900"
+            />
+          </div>
+          <h1 className="text-lg md:text-6xl font-extrabold mb-2">
             Halo, Saya <span className="text-primary-600">{DATA.profile.name}</span>
             </h1>
           <p className="text-1lg md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mt-5 mb-8">
@@ -54,8 +57,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-        
-        {/* Skills Section - PERBAIKAN: Tambahkan !bg-white pada Card */}
         <section id="skills" className="py-10 bg-gray-50/50 dark:bg-gray-800/30">
           <div className="scroll-mt-5 py-10 max-w-5xl mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -125,10 +126,10 @@ export default function Home() {
               Saya terbuka untuk peluang kerja, kolaborasi proyek, atau sekadar berbagi pengalaman mengenai teknis dokumentasi dan front-end.
             </p>
             <div className="flex justify-center gap-4">
-              <Button color="blue" href="mailto:emailanda@gmail.com">
+              <Button color="blue" href="mailto:mnsimron@gmail.com">
                 mnsimron@gmail.com
               </Button>
-              <Button color="gray" outline href="https://linkedin.com">
+              <Button color="gray" className="dark:!bg-gray-700 px-2 py-1" outline href="https://www.linkedin.com/in/mnsimron22">
                 LinkedIn
               </Button>
             </div>

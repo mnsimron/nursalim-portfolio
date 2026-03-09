@@ -1,7 +1,9 @@
 "use client";
 
+import { Navbar, NavbarBrand } from "flowbite-react";
 import { useState } from "react";
-import { Navbar, NavbarBrand, DarkThemeToggle } from "flowbite-react";
+import { HiSun, HiMoon } from "react-icons/hi";
+import { useThemeMode } from "flowbite-react";
 import { DATA } from "@/constants/data";
 
 export default function AppNavbar() {
@@ -15,8 +17,11 @@ export default function AppNavbar() {
     { name: "Kontak", id: "contact" },
   ];
 
+    const { mode, toggleMode } = useThemeMode();
+
   return (
-    <Navbar fluid className="fixed w-full z-50 top-0 border-b border-gray-200 dark:border-gray-700 py-3 bg-white dark:bg-gray-900">
+    <Navbar fluid className="fixed w-full z-50 top-0 border-b border-gray-200 dark:border-gray-700 py-3 
+             bg-white/80 dark:bg-gray-900/80 backdrop-blur">
       <div className="container mx-auto flex items-center justify-between">
         <NavbarBrand href="#home">
           <span className="text-xl font-bold text-primary-600">
@@ -47,8 +52,18 @@ export default function AppNavbar() {
               </a>
             ))}
           </nav>
-
-          <DarkThemeToggle />
+          <button
+            onClick={toggleMode}
+            aria-label="Toggle Dark Mode"
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 
+                      hover:scale-110 hover:rotate-12 transition-all duration-300"
+          >
+            {mode === "dark" ? (
+              <HiSun className="w-5 h-5 text-yellow-400" />
+            ) : (
+              <HiMoon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+            )}
+          </button>
         </div>
       </div>
     </Navbar>
